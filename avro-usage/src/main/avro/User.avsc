@@ -1,0 +1,13 @@
+{
+  "namespace": "com.zlikun.hadoop.avro",
+  "type": "record",
+  "name": "User",
+  "doc": "A user info model.",
+  "fields": [
+    { "name": "id", "type": "long" },
+    { "name": "name", "type": "string" },
+    { "name": "birthday", "type": "long" },
+    { "name": "favorite_number", "type": [ "int", "null" ] },
+    { "name": "favorite_color", "type": [ "string", "null" ] }
+  ]
+}
