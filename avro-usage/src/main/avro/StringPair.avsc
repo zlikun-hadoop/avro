@@ -1,0 +1,16 @@
+{
+  "namespace": "com.zlikun.hadoop.avro",
+  "type": "record",
+  "name": "StringPair",
+  "doc": "A pair of strings.",
+  "fields": [
+    {
+      "name": "left",
+      "type": "string"
+    },
+    {
+      "name": "right",
+      "type": "string"
+    }
+  ]
+}
