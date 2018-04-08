@@ -29,13 +29,13 @@
 ```
 - 生成`.avro`文件
 ```
-$ java -jar avro-tools-1.8.2.jar fromjson users.json --schema-file User.schema > users.avro
+$ java -jar avro-tools-1.7.7.jar fromjson users.json --schema-file User.schema > users.avro
 ```
 
 #### MR任务执行失败
 ```
 # 查看失败的任务日志
-$ yarn logs -applicationId application_1517289772935_0171
+$ yarn logs -applicationId application_1517289772935_0173
 ... ...
 2018-04-08 19:03:47,771 INFO [main] org.apache.hadoop.service.AbstractService: Service org.apache.hadoop.mapreduce.v2.app.MRAppMaster failed in state INITED; cause: org.apache.hadoop.yarn.exceptions.YarnRuntimeException: java.lang.RuntimeException: java.lang.ClassNotFoundException: Class org.apache.avro.mapreduce.AvroKeyValueOutputFormat not found
  org.apache.hadoop.yarn.exceptions.YarnRuntimeException: java.lang.RuntimeException: java.lang.ClassNotFoundException: Class org.apache.avro.mapreduce.AvroKeyValueOutputFormat not found
@@ -62,5 +62,7 @@ $ yarn logs -applicationId application_1517289772935_0171
  	... 13 more
  End of LogType:syslog
  
-# 测试发现Hadoop-2.7.5使用Avro版本是1.7.4，所以这里使用相同版本的Avro
+# 测试发现Hadoop-2.7.5使用Avro版本是1.7.4，所以这里使用相同版本的Avro (实际使用的是1.7.7版)
+# 另外少了avro-mapred包，将其复制到hadoop下，需要重启hadoop
+$ cp avro-mapred-1.7.4.jar /usr/local/hadoop-2.7.5/share/hadoop/common/lib/
 ```
