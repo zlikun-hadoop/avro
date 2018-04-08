@@ -36,7 +36,7 @@ public class StringPairTest {
 
         // 该字节数组即可用于网络传输
         byte [] data = out.toByteArray();
-//        assertEquals(20, data.length);
+        assertEquals(20, data.length);
 
         // 反序列化
         DatumReader<StringPair> reader = new SpecificDatumReader<>(StringPair.class);
