@@ -1,0 +1,19 @@
+{
+  "namespace": "com.zlikun.hadoop.avro",
+  "type": "record",
+  "name": "DataInfo",
+  "fields": [
+    {"name": "stringVar", "type": "string"},
+    {"name": "bytesVar", "type": ["bytes", "null"]},
+    {"name": "booleanVar",  "type": "boolean"},
+    {"name": "intVar",  "type": "int", "order":"descending"},
+    {"name": "longVar",  "type": ["long", "null"], "order":"ascending"},
+    {"name": "floatVar",  "type": "float"},
+    {"name": "doubleVar",  "type": "double"},
+    {"name": "enumVar",  "type": {"type": "enum", "name": "DataSuit", "symbols" : ["SPADES", "HEARTS", "DIAMONDS", "CLUBS"]}},
+    {"name": "strArrayVar", "type": {"type": "array", "items": "string"}},
+    {"name": "intArrayVar", "type": {"type": "array", "items": "int"}},
+    {"name": "mapVar", "type": {"type": "map", "values": "long"}},
+    {"name": "fixedVar", "type": {"type": "fixed", "size": 16, "name": "DataMD5"}}
+  ]
+}
