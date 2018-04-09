@@ -12,6 +12,7 @@
     <modules>
         <module>avro-usage</module>
         <module>avro-mr</module>
+        <module>avro-benchmark</module>
     </modules>
 
     <properties>
