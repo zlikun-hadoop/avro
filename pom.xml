@@ -13,6 +13,7 @@
         <module>avro-usage</module>
         <module>avro-mr</module>
         <module>avro-benchmark</module>
+        <module>avro-rpc</module>
     </modules>
 
     <properties>
@@ -34,6 +35,12 @@
             <dependency>
                 <groupId>org.apache.avro</groupId>
                 <artifactId>avro-mapred</artifactId>
+                <version>${avro.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro-ipc</artifactId>
                 <version>${avro.version}</version>
             </dependency>
 
